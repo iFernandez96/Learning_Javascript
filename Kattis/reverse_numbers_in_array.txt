@@ -1,0 +1,18 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input_lines = [];
+
+rl.on('line', (line) => {
+    input_lines.push(line);
+}).on('close', () => {
+    const reversed = input_lines[1].split(" ").reverse();
+    for (let num of reversed) {
+        console.log(parseInt(num));
+    }
+  rl.close();
+});
